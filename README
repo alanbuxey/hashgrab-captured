@@ -1,0 +1,65 @@
+hashgrab-captured
+-----------------
+
+About
+-----
+
+Hashgrab-captured is a utility designed to capture the network output from 
+hashgrabd and store it either on disk or in a database. For more information
+on the purpose and capabilities of hashgrabd please see that package.
+
+Limitations
+-----------
+
+The authors testing environment is MySQL driven, support for other DBMS' may
+be untested.
+
+Outputs
+-------
+
+Hashgrab-captured stores the results from hashgrabd in date split text files
+and/or in databases.
+
+Requirements
+------------
+
+o Perl 5.8+
+
+Running
+-------
+
+Command-line parameters are listed upon executing the program with no 
+arguements.
+
+Examples
+--------
+
+See Also
+--------
+
+hashgrabd         - Utility to capture eDonkey and BitTorrent cryptographic
+                    hashes from BPF, outputting via STDOUT or UDP connection.
+hashgrab-web      - PHP site to read from MySQL database, propulated from
+                    hashgrab-captured.
+
+Authors
+-------
+
+hashgrab-captured is maintained by the following individuals:
+o Peter Wood <p.wood@lancaster.ac.uk> (Project Lead)
+o Daniel Meyers <d.meyers@lancaster.ac.uk> 
+
+License
+-------
+
+Copyright (C) 2010 University of Lancaster
+
+This program is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by 
+the Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version. This program is distributed in the 
+hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+A PARTICULAR PURPOSE. See the GNU General Public License 
+for more details. You should have received a copy of the GNU General 
+Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
