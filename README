@@ -24,6 +24,10 @@ Requirements
 ------------
 
 o Perl 5.8+
+o Compress::Bzip2
+o DateTime
+o File::Path
+o Proc::Daemon
 
 Running
 -------
@@ -31,8 +35,28 @@ Running
 Command-line parameters are listed upon executing the program with no 
 arguements.
 
+usage: ./hashgrab-captured.pl [ --listen-port port ] [ --store-directory directory ]
+	[ --store-dbi dbi-string ] [ --store-dbi-username username ] 
+	[ --store-dbi-password password ] [ --store-expiry days ] [ --daemonize ]
+
+  --listen-port port		- UDP port to listen on for records (default => 10000)
+  --store-directory directory	- directory where to store recieved data
+  --store-dbi dbi-string	- DBI string where to store recieved data
+  --store-dbi-username username	- DBI username to use
+  --store-dbi-password password	- DBI password to use
+  --store-expiry days		- length of time to store data on disk (default => 90)
+  --daemonize			- daemonize program
+
 Examples
 --------
+
+* Store captured data from port 9999 in /var/log/hashgrab
+
+./hashgrab-captured.pl --listen-port 9999 --store-directory /var/log/hashgrab
+
+* Store captured data from default port into DBI, providing username/password and daemonize
+
+./hashgrab-captured.pl --store-dbi dbi:mysql:hashgrabdatabase --store-dbi-username hashgrab --store-dbi-password barghsah
 
 See Also
 --------
