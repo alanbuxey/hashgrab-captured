@@ -29,6 +29,19 @@ o DateTime
 o File::Path
 o Proc::Daemon
 
+Obtaining
+---------
+
+At current hashgrab-captured does not have an installer, requirements should
+be met out of CPAN or other package management tools.
+
+1. Obtain current release of hashgrab-captured.
+# wget http://github.com/tignetworking/hashgrab-captured/tarball/release-current
+
+2. Extract current release of hashgrab-captured, XXXXXXX will very depending
+   on git commits.
+# tar xvzf tignetworking-hashgrab-captured-XXXXXXX.tar.gz
+
 Running
 -------
 
