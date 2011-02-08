@@ -28,15 +28,11 @@ use Compress::Bzip2;
 use DateTime;
 use File::Path;
 use Proc::Daemon;
-use DBI;
 
 $0 =~ s#.*/##;
 
 my $listen_port = 10000;
 my $store_directory = "";
-my $store_dbi = "";
-my $store_dbi_username = "";
-my $store_dbi_password = "";
 my $store_expiry = 90;
 my $daemonize = "";
 my $reciever_socket;
@@ -47,14 +43,11 @@ my $fiveminute_handle;
 GetOptions (
 	"listen-port=s" => \$listen_port,
 	"store-directory=s" => \$store_directory,
-	"store-dbi=s" => \$store_dbi,
-	"store-dbi-username=s" => \$store_dbi_username,
-	"store-dbi-password=s" => \$store_dbi_password,
 	"store-expiry=i" => \$store_expiry,
 	"daemonize" => \$daemonize
-) or die "usage: $0 [ --listen-port port ] [ --store-directory directory ] [ --store-dbi dbi-string ] [ --store-dbi-username username ] [ --store-dbi-password password ] [ --store-expiry days ] [ --daemonize ]\n";
+) or die "usage: $0 [ --listen-port port ] [ --store-directory directory ] [ --store-expiry days ] [ --daemonize ]\n";
 
-die "either a storage directory and/or store DBI string must be provided\n" unless $store_directory || $store_dbi;
+die "a storage directory must be provided\n" unless $store_directory;
 
 if ($store_directory && !-d $store_directory) {
 	die "storage directory specified does not exist\n";
